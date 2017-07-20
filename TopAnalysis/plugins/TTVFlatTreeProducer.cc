@@ -9,7 +9,7 @@
 #include "TMatrixDSym.h"
 #include "TMatrixDSymEigen.h"
 
-#include "KKousour/TopAnalysis/plugins/TTVFlatTreeProducer.h"
+#include "UserCode/TopAnalysis/plugins/TTVFlatTreeProducer.h"
 
 using namespace std;
 using namespace reco;
@@ -163,8 +163,8 @@ void TTVFlatTreeProducer::beginJob()
       outTree_->Branch("pdfWeights"           ,"vector<float>"     ,&pdfWeights_);
     } 
   }
-  discrTTW_ = new TTVDiscriminatorMVA("KKousour/TopAnalysis/data/"+xmlFileTTW_,"selW");
-  discrTTZ_ = new TTVDiscriminatorMVA("KKousour/TopAnalysis/data/"+xmlFileTTZ_,"selZ");
+  discrTTW_ = new TTVDiscriminatorMVA("UserCode/TopAnalysis/data/"+xmlFileTTW_,"selW");
+  discrTTZ_ = new TTVDiscriminatorMVA("UserCode/TopAnalysis/data/"+xmlFileTTZ_,"selZ");
   cout<<"Begin job finished"<<endl;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
