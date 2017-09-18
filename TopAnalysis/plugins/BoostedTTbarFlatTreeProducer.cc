@@ -14,7 +14,7 @@
 #include "DataFormats/JetReco/interface/GenJet.h"
 #include "DataFormats/JetReco/interface/GenJetCollection.h"
 
-#include "KKousour/TopAnalysis/plugins/BoostedTTbarFlatTreeProducer.h"
+#include "UserCode/TopAnalysis/plugins/BoostedTTbarFlatTreeProducer.h"
 
 using namespace std;
 using namespace reco;

@@ -165,7 +165,7 @@ void JetCleanedProducer::produce(edm::Event& iEvent, const edm::EventSetup& iSet
   iEvent.getByToken(electronsToken,electrons);
   iEvent.getByToken(recVtxsToken,recVtxs);
 
-  std::auto_ptr<pat::JetCollection> result(new pat::JetCollection); //Cleaned jets
+  std::unique_ptr<pat::JetCollection> result(new pat::JetCollection); //Cleaned jets
   const int size = jets->size();
   result->reserve(size);
   
@@ -197,7 +197,7 @@ void JetCleanedProducer::produce(edm::Event& iEvent, const edm::EventSetup& iSet
   
   NumericSafeGreaterByPt<pat::Jet> compJets;
   std::sort(result->begin(),result->end(),compJets);
-  iEvent.put(result);
+  iEvent.put(std::move(result));
 
   return;
 }
